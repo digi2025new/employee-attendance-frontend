@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import {
   getDashboardStats,
   getEmployees,
-  downloadExcel,
-  downloadPDF,
   toggleEmployee,
 } from "../services/admin";
 
@@ -29,9 +27,7 @@ export default function AdminDashboard() {
   const [attendanceChart, setAttendanceChart] = useState([]);
   const [departmentChart, setDepartmentChart] = useState([]);
 
-  const [reportMonth, setReportMonth] = useState(
-    new Date().getMonth() + 1
-  );
+
 
   const [selectedEmployee, setSelectedEmployee] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -93,39 +89,7 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      {/* Reports */}
 
-      <div className="bg-white dark:bg-slate-800 rounded-xl shadow p-6 mb-8 transition-colors">
-        <h2 className="text-2xl font-bold mb-5 dark:text-white">Monthly Reports</h2>
-
-        <div className="flex flex-wrap gap-4">
-          <select
-            value={reportMonth}
-            onChange={(e) => setReportMonth(e.target.value)}
-            className="border dark:border-slate-600 bg-white dark:bg-slate-700 dark:text-white rounded-lg px-4 py-3"
-          >
-            {[...Array(12)].map((_, i) => (
-              <option key={i + 1} value={i + 1}>
-                Month {i + 1}
-              </option>
-            ))}
-          </select>
-
-          <button
-            onClick={() => downloadExcel(reportMonth)}
-            className="bg-green-600 hover:bg-green-700 text-white px-6 rounded-lg"
-          >
-            Download Excel
-          </button>
-
-          <button
-            onClick={() => downloadPDF(reportMonth)}
-            className="bg-red-600 hover:bg-red-700 text-white px-6 rounded-lg"
-          >
-            Download PDF
-          </button>
-        </div>
-      </div>
 
       {/* Add Employee */}
 

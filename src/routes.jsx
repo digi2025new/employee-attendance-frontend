@@ -14,6 +14,8 @@ import AdminLayout from "./layouts/AdminLayout";
 import EmployeeProfile from "./pages/EmployeeProfile";
 import ForgotPassword from "./pages/ForgotPassword";
 
+import AdminReports from "./pages/AdminReports";
+
 export default function AppRoutes() {
   return (
     <Routes>
@@ -39,6 +41,7 @@ export default function AppRoutes() {
         <Route element={<AdminLayout />}>
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/attendance" element={<AdminAttendance />} />
+          <Route path="/admin/reports" element={<AdminReports />} />
         </Route>
       </Route>
     </Routes>
