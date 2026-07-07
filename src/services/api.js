@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://employee-attendance-backend-00m5.onrender.com"
+  baseURL: "https://employee-attendance-backend-00m5.onrender.com",
 });
 
 // Automatically attach JWT token
