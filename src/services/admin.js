@@ -48,22 +48,14 @@ export const getAttendance = async (
 
 };
 
+const API_URL = api.defaults.baseURL;
+
 export const downloadExcel = (month) => {
-
-  window.open(
-    `http://127.0.0.1:8000/reports/excel/${month}`,
-    "_blank"
-  );
-
+  window.open(`${API_URL}/reports/excel/${month}`, "_blank");
 };
 
 export const downloadPDF = (month) => {
-
-  window.open(
-    `http://127.0.0.1:8000/reports/pdf/${month}`,
-    "_blank"
-  );
-
+  window.open(`${API_URL}/reports/pdf/${month}`, "_blank");
 };
 
 export const toggleEmployee = async (employeeId) => {
